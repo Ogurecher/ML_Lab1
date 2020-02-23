@@ -19,3 +19,8 @@ def prepare_data(filename):
     labels = np_dataset[:, -1]
 
     return np_dataset, normalized_features, labels, num_classes
+
+def one_hot_encode(labels):
+    pd_labels = pd.Series(labels)
+    
+    return np.array(pd.get_dummies(pd_labels))
